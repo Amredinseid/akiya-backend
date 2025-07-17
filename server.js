@@ -38,6 +38,9 @@ app.use('/api/products', productRoutes);
 app.use('/api/favorites', favoriteRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/delivery', deliveryRoutes); // 📦
+app.get('/', (req, res) => {
+  res.send('Akiya Backend is Running ✅');
+});
 
 mongoose
   .connect(process.env.MONGO_URI)
