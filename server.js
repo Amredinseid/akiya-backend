@@ -46,6 +46,10 @@ mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log('✅ MongoDB connected'))
   .catch((err) => console.error('❌ MongoDB error:', err));
+// Add this root route
+app.get('/', (req, res) => {
+  res.send('Akiya Backend is Running ✅');
+});
 
 // Socket Delivery Logic
 setupDeliverySocket(io); // 🧠 Activate live delivery location
